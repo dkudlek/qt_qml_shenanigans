@@ -7,7 +7,7 @@ ci_example_build:WSL:
  before_script:
   - apt-get update --yes
   - apt-get install --yes cmake
-  - apt-get install --yes build-essential qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtdeclarative5-dev
+  - apt-get install --yes build-essential qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtdeclarative5-dev qtpositioning5-dev
  script:
   - echo build stage
   - mkdir build

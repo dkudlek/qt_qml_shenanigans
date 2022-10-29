@@ -6,51 +6,51 @@ Item{
     Component.onCompleted:{
         switch(appFirstWindowDisplaySize){
             case "fullscreen":
-                firstWindow.visibility = Window.FullScreen        
+                firstWindow.visibility = Window.FullScreen
                 firstWindow.visible = true
                 console.log("First Window: fullscreen")
                 break
             case "off":
-                firstWindow.visibility = Window.Hidden        
+                firstWindow.visibility = Window.Hidden
                 firstWindow.visible = false
                 console.log("First Window: off")
                 break
             default:
-                firstWindow.visibility = Window.Windowed        
+                firstWindow.visibility = Window.Windowed
                 firstWindow.visible = true
                 console.log("First Window: windowed")
 
         }
         switch(appSecondWindowDisplaySize){
             case "fullscreen":
-                secondWindow.visibility = Window.FullScreen        
+                secondWindow.visibility = Window.FullScreen
                 secondWindow.visible = true
                 console.log("Second Window: fullscreen")
                 break
             case "off":
-                secondWindow.visibility = Window.Hidden        
+                secondWindow.visibility = Window.Hidden
                 secondWindow.visible = false
                 console.log("Second Window: off")
                 break
             default:
-                secondWindow.visibility = Window.Windowed        
+                secondWindow.visibility = Window.Windowed
                 secondWindow.visible = true
                 console.log("Second Window: windowed")
 
         }
         switch(appThirdWindowDisplaySize){
             case "fullscreen":
-                thirdWindow.visibility = Window.FullScreen        
+                thirdWindow.visibility = Window.FullScreen
                 thirdWindow.visible = true
                 console.log("Third Window: fullscreen")
                 break
             case "off":
-                thirdWindow.visibility = Window.Hidden        
+                thirdWindow.visibility = Window.Hidden
                 thirdWindow.visible = false
                 console.log("Third Window: off")
                 break
             default:
-                thirdWindow.visibility = Window.Windowed        
+                thirdWindow.visibility = Window.Windowed
                 thirdWindow.visible = true
                 console.log("Third Window: windowed")
 
@@ -76,7 +76,7 @@ Item{
             focus: true
             Keys.onPressed:{
                 if(event.modifiers === Qt.AltModifier){
-                    if(event.key == Qt.Key_Q){
+                    if(event.key ===) Qt.Key_Q){
                         firstWindow.close()
                     }else if(event.key === Qt.Key_Return){
                         if(firstWindow.visibility === Qt.WindowMaximized){
@@ -109,7 +109,7 @@ Item{
             focus: true
             Keys.onPressed:{
                 if(event.modifiers === Qt.AltModifier){
-                    if(event.key == Qt.Key_Q){
+                    if(event.key === Qt.Key_Q){
                         secondWindow.close()
                     }else if(event.key === Qt.Key_Return){
                         if(secondWindow.visibility === Qt.WindowMaximized){
@@ -142,7 +142,7 @@ Item{
             focus: true
             Keys.onPressed:{
                 if(event.modifiers === Qt.AltModifier){
-                    if(event.key == Qt.Key_Q){
+                    if(event.key === Qt.Key_Q){
                         thirdWindow.close()
                     }else if(event.key === Qt.Key_Return){
                         if(thirdWindow.visibility === Qt.WindowMaximized){
