@@ -1,0 +1,21 @@
+image: gcc
+stages:
+  - build
+
+ci_example_build:WSL:
+ stage: build
+ before_script:
+  - apt-get update --yes
+  - apt-get install --yes cmake
+  - apt-get install --yes build-essential qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qtdeclarative5-dev
+ script:
+  - echo build stage
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build .
+ artifacts:
+  paths:
+   - build
+ dependencies:
+

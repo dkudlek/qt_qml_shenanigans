@@ -1,30 +1,55 @@
 find_package(Qt5 REQUIRED Qml Quick Gui QuickWidgets Widgets Core)
 
-IF(WIN32)
-add_executable(multi_screen_app
-               argparse.hpp
-			   WIN32
-			   main.cpp)
-
-add_executable(multi_screen_app_cmd
-               argparse.hpp
-               main.cpp)
-ELSE()
-add_executable(multi_screen_app
-			   argparse.hpp
-               main.cpp)
+IF(NOT Qt5_FOUND)
+message("Qt5 NOT FOUND!")
 ENDIF()
 
 qt5_add_resources(QML_QRC ${CMAKE_CURRENT_LIST_DIR}/main.qrc)
-target_sources(multi_screen_app PRIVATE ${QML_QRC})
+IF(WIN32)
 
-target_link_libraries(multi_screen_app
-                      Qt5::Qml
-                      Qt5::Quick
-                      Qt5::Gui
-                      Qt5::QuickWidgets
-                      Qt5::Widgets
-                      Qt5::Core)
-# target_include_directories(test_states PUBLIC "${PROJECT_BINARY_DIR}")
+	add_executable(multi_screen_app
+				   WIN32
+				   argparse.hpp
+				   main.cpp)
 
-install(TARGETS multi_screen_app DESTINATION bin)
+	add_executable(multi_screen_app_cmd
+				   argparse.hpp
+				   main.cpp)
+		
+	target_link_libraries(multi_screen_app
+						  Qt5::Qml
+						  Qt5::Quick
+						  Qt5::Gui
+						  Qt5::QuickWidgets
+						  Qt5::Widgets
+						  Qt5::Core)
+						  
+	target_link_libraries(multi_screen_app_cmd
+						  Qt5::Qml
+						  Qt5::Quick
+						  Qt5::Gui
+						  Qt5::QuickWidgets
+						  Qt5::Widgets
+						  Qt5::Core)
+	target_sources(multi_screen_app PRIVATE ${QML_QRC})
+	target_sources(multi_screen_app_cmd PRIVATE ${QML_QRC})
+	target_compile_features(multi_screen_app PRIVATE cxx_std_17)
+	target_compile_features(multi_screen_app_cmd PRIVATE cxx_std_17)	
+	install(TARGETS multi_screen_app DESTINATION bin)	
+	install(TARGETS multi_screen_app_cmd DESTINATION bin)
+					  
+ELSE()
+	add_executable(multi_screen_app
+				   argparse.hpp
+				   main.cpp)
+	target_link_libraries(multi_screen_app
+						  Qt5::Qml
+						  Qt5::Quick
+						  Qt5::Gui
+						  Qt5::QuickWidgets
+						  Qt5::Widgets
+						  Qt5::Core)
+	target_sources(multi_screen_app PRIVATE ${QML_QRC})
+	target_compile_features(multi_screen_app PRIVATE cxx_std_17)
+	install(TARGETS multi_screen_app DESTINATION bin)
+ENDIF()
