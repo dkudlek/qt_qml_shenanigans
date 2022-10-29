@@ -76,7 +76,7 @@ Item{
             focus: true
             Keys.onPressed:{
                 if(event.modifiers === Qt.AltModifier){
-                    if(event.key ===) Qt.Key_Q){
+                    if(event.key === Qt.Key_Q){
                         firstWindow.close()
                     }else if(event.key === Qt.Key_Return){
                         if(firstWindow.visibility === Qt.WindowMaximized){
