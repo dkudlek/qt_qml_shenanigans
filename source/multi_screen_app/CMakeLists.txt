@@ -7,8 +7,7 @@ ENDIF()
 qt5_add_resources(QML_QRC ${CMAKE_CURRENT_LIST_DIR}/main.qrc)
 IF(WIN32)
 
-	add_executable(multi_screen_app
-				   WIN32
+	add_executable(multi_screen_app WIN32
 				   argparse.hpp
 				   main.cpp)
 

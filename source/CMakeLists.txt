@@ -1,1 +1,2 @@
 add_subdirectory(multi_screen_app)
+add_subdirectory(custom_objects_app)
