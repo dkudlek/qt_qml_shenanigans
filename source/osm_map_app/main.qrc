@@ -3,6 +3,10 @@
         <file>res/qml/main.qml</file>
     </qresource>
 	<qresource>
+		<file>res/icons/bike.png</file>
+		<file>res/icons/location.png</file>
+		<file>res/icons/plus.png</file>
+		<file>res/icons/minus.png</file>
 		<file>res/icons/outline_my_location_black_24dp.png</file>
 	</qresource>
 </RCC>
